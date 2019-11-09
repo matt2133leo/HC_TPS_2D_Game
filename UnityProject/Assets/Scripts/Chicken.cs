@@ -13,7 +13,7 @@ public class Chicken : MonoBehaviour
     private void Update()
     {
         Jump();
-        Dead();
+        dead();
     }
 
     /// <summary>
@@ -27,7 +27,7 @@ public class Chicken : MonoBehaviour
     /// <summary>
     /// 小雞死亡的方法。
     /// </summary>
-    private void Dead()
+    private void dead()
     {
 
     }

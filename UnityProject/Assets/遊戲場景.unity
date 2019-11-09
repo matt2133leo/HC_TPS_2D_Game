@@ -1225,13 +1225,14 @@ GameObject:
   - component: {fileID: 1344416439}
   - component: {fileID: 1344416438}
   - component: {fileID: 1344416440}
+  - component: {fileID: 1344416441}
   m_Layer: 0
   m_Name: "\u7DF4\u7FD2\u7269\u4EF6"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1344416438
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1245,7 +1246,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lv: 1
-  speed: 0.1
+  speed: 1.5
   prop1: "\u7D05\u8272\u85E5\u6C34"
   mission: 1
 --- !u!4 &1344416439
@@ -1274,6 +1275,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4618b0a89975d4f4fb95415d6c57dfcd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  count: 0
+--- !u!114 &1344416441
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1344416437}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d706ba4b0710a9499918ebc5ef33bf6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  a: 10
+  b: 3
+  c: 5
+  d: 11
+  score: 50
+  num1: 1000
+  num2: 500
+  boolA: 1
+  boolB: 0
+  hp: 100
+  prop: 10
+  test_bool: 0
 --- !u!1 &1558720828
 GameObject:
   m_ObjectHideFlags: 0
@@ -1285,6 +1311,7 @@ GameObject:
   - component: {fileID: 1558720830}
   - component: {fileID: 1558720829}
   - component: {fileID: 1558720831}
+  - component: {fileID: 1558720832}
   m_Layer: 0
   m_Name: "\u5730\u677F"
   m_TagString: Untagged
@@ -1367,7 +1394,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 834fba632b77ee748a94ce7b90f2fc37, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 19
+  speed: 3
+  ground: {fileID: 1558720830}
+--- !u!61 &1558720832
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1558720828}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -0.03}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.32, y: 0.32}
+    newSize: {x: 50, y: 0.32}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 2
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 50, y: 0.28}
+  m_EdgeRadius: 0
 --- !u!1 &2056004878
 GameObject:
   m_ObjectHideFlags: 0
@@ -1422,7 +1476,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Sprite: {fileID: 21300000, guid: 5ada751933d21b844a1fe1ae13b03d57, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1537,6 +1591,8 @@ GameObject:
   - component: {fileID: 2131453243}
   - component: {fileID: 2131453242}
   - component: {fileID: 2131453245}
+  - component: {fileID: 2131453246}
+  - component: {fileID: 2131453247}
   m_Layer: 0
   m_Name: "\u767D\u8272\u5C0F\u96DE"
   m_TagString: Untagged
@@ -1640,3 +1696,40 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Jumphigh: 759.1
   Dead: 0
+--- !u!50 &2131453246
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2131453241}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!58 &2131453247
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2131453241}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.015, y: -0.015}
+  serializedVersion: 2
+  m_Radius: 0.125

@@ -1,9 +1,11 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class LearnEvent : MonoBehaviour
 {
+    public int count = 0;
     /*
       事件 Event：
 
@@ -14,6 +16,21 @@ public class LearnEvent : MonoBehaviour
     private void Start()    //程式開始時會跑一次
     {
         //使用 API 方法 : 方法名稱();
-        print("哈囉！九頭瞜拉！！！");
+        print("九頭瞜拉！！！");
+        print(count);
     }
+
+    //更新事件
+
+    private void Update()
+    {
+        //一秒鐘更新60次,會依照電腦效能去跑。
+
+        print("姆打姆打姆打姆打姆打姆打姆打姆打姆打姆打姆打姆打");
+
+    }
+
+
+
+
 }

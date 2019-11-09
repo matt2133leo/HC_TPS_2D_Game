@@ -32,6 +32,10 @@ public class LearnField : MonoBehaviour
      -修飾詞:
      -私人: 隱藏 private (預設)
      -公開: 顯示 public
+
+     -修飾詞權限:
+     private 其他類別無法使用
+     public 其他類別可以使用
     */
 
     //命名時使用有意義的代名詞去命名

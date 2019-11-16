@@ -14,7 +14,7 @@ public class Ground : MonoBehaviour
     private void Start()
     {
         //屬性
-        print(ground.position); //偵測是否有抓到正確物件
+        //print(ground.position); //偵測是否有抓到Ground物件
     }
 
     private void Update()

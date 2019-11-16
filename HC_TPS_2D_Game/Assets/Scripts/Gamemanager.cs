@@ -12,6 +12,8 @@ public class Gamemanager : MonoBehaviour
     // GameObject 可以存放場景上的遊戲物件與專案內的預置物
     public GameObject pipe;
 
+
+
     private void Update()
     {
         addscore();
@@ -41,7 +43,18 @@ public class Gamemanager : MonoBehaviour
     /// </summary>
     private void bornpipe()
     {
-        Instantiate(pipe); //等於Object.Instantiate(pipe)
+        // 生成(物件);
+        //   Instantiate(pipe); //等於Object.Instantiate(pipe), 生成物件在原本預置物的位置
+
+        //生成(物件，座標，角度);
+        float y = Random.Range(-1f, 1f);
+        //區域欄位(不需要修飾詞);
+        Vector3 pos = new Vector3(10, y, 0);
+
+        //Quaternion.identity 代表零角度
+        Instantiate(pipe, pos, Quaternion.identity);
+       
+     
     }
 
     /// <summary>

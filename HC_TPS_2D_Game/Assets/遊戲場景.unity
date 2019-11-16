@@ -1030,6 +1030,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Score: 0
   High_Score: 0
+  pipe: {fileID: 6559864730366530418, guid: fa79bdd74fb1184469afe1a375e9252a, type: 3}
 --- !u!4 &1097128035
 Transform:
   m_ObjectHideFlags: 0
@@ -1234,7 +1235,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1344416438
 MonoBehaviour:
   m_ObjectHideFlags: 0

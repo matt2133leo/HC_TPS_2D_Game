@@ -35,7 +35,7 @@ public class LearnAPI : MonoBehaviour
         #endregion
 
         #region 練習
-        muteBGM.mute = true; 
+        muteBGM.Stop(); 
         #endregion
 
     }

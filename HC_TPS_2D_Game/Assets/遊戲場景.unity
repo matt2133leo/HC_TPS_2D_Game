@@ -1728,8 +1728,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e94a2069ef2a6f4ca9cd7dff47fa7d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Jumphigh: 759.1
+  Jumphigh: 250
+  ChickenAngle: 100
   Dead: 0
+  Chickenr2d: {fileID: 2131453246}
 --- !u!50 &2131453246
 Rigidbody2D:
   serializedVersion: 4

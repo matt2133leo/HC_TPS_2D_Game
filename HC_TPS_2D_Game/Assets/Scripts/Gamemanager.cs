@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;  // 引用 介面 API 要用介面一定要輸入這個
 
 public class Gamemanager : MonoBehaviour
 {
@@ -11,14 +12,19 @@ public class Gamemanager : MonoBehaviour
     [Header("水管"), Tooltip("生成水管")]
     // GameObject 可以存放場景上的遊戲物件與專案內的預置物
     public GameObject pipe;
+    [Header("遊戲結算畫面")]
+    public GameObject goFinal;
+    //static 不會顯示在屬性 Inspector 面板上
+    [Header("遊戲結束")]
+    public static bool gameOver;
 
+    [Header("分數欄位")]
+    public Text ChickenpassScore;
 
 
     private void Update()
     {
-        addscore();
         highscore();
-        gameover();
     }
 
 
@@ -27,7 +33,11 @@ public class Gamemanager : MonoBehaviour
     /// </summary>
     public void addscore()
     {
-       
+        print("加分");
+        Score++;
+        // 分數介面.文字內容 = 分數.轉為自傳
+        // ToString() 可以將任何類型轉呈字串。
+        ChickenpassScore.text = Score.ToString(); 
     }
 
     /// <summary>
@@ -60,9 +70,11 @@ public class Gamemanager : MonoBehaviour
     /// <summary>
     /// 遊戲失敗的方法。
     /// </summary>
-    private void gameover()
+    public void gameover()
     {
-
+        goFinal.SetActive(true); // 顯示結算畫面
+        gameOver = true;         // 遊戲結束 = 是
+        CancelInvoke("bornpipe"); // 停止 InvokeRepeating 、Invoke 的方法
     }
 
     private void Start()

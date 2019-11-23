@@ -7,7 +7,7 @@ public class Ground : MonoBehaviour
     // private 私人(隱藏)，public 公開(顯示)
     // int 整數
     [Header("移動速度"),Range(0,100)]
-    public int speed = 10;
+    public int speed = 3;
 
     [Header("變型元件")]
     public Transform ground; //抓取物件本身Transform程式
@@ -33,6 +33,8 @@ public class Ground : MonoBehaviour
     /// </summary>
     private void Move()
     {
+        //如果 GM.遊戲結束 為 勾選 就 跳出
+        if (Gamemanager.gameOver) return;
         // 地板.位移(x, y, z);
         // Time.deltaTime 每幀的時間
         ground.Translate(-speed * Time.deltaTime, 0, 0); 

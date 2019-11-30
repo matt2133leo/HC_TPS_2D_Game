@@ -59,39 +59,39 @@ ScriptsOnlyBuild:
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 9674}
+      Script: {instanceID: 9676}
     - Class: 114
-      Script: {instanceID: 9822}
+      Script: {instanceID: 9824}
     - Class: 114
-      Script: {instanceID: 9856}
+      Script: {instanceID: 9858}
     - Class: 114
-      Script: {instanceID: 9864}
+      Script: {instanceID: 9866}
     - Class: 114
-      Script: {instanceID: 9928}
+      Script: {instanceID: 9930}
     - Class: 114
-      Script: {instanceID: 10048}
+      Script: {instanceID: 10050}
     - Class: 114
-      Script: {instanceID: 10174}
+      Script: {instanceID: 10176}
     - Class: 114
-      Script: {instanceID: 10214}
+      Script: {instanceID: 10216}
     - Class: 114
-      Script: {instanceID: 10238}
+      Script: {instanceID: 10240}
     - Class: 114
-      Script: {instanceID: 10352}
+      Script: {instanceID: 10354}
     - Class: 114
-      Script: {instanceID: 10358}
+      Script: {instanceID: 10360}
     - Class: 114
-      Script: {instanceID: 10574}
+      Script: {instanceID: 10576}
     - Class: 114
-      Script: {instanceID: 10578}
+      Script: {instanceID: 10580}
     - Class: 114
-      Script: {instanceID: 10652}
+      Script: {instanceID: 10654}
     - Class: 114
-      Script: {instanceID: 11020}
+      Script: {instanceID: 11022}
     - Class: 114
-      Script: {instanceID: 11308}
+      Script: {instanceID: 11310}
     - Class: 114
-      Script: {instanceID: 11360}
+      Script: {instanceID: 11362}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -580,4 +580,4 @@ ScriptsOnlyBuild:
   platform: 5
   scenePathNames:
   - "Assets/\u904A\u6232\u5834\u666F.unity"
-  playerPath: C:/Users/A/Desktop/FlappyBird/FlappyBird.exe
+  playerPath: C:/Users/A/Desktop/FlappyBird_UnityLearn_PC/FlappyBird.exe

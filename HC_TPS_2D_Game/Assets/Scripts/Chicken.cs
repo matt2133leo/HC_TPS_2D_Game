@@ -52,7 +52,7 @@ public class Chicken : MonoBehaviour
         //輸入.按下按鍵(按鍵列舉.滑鼠左鍵) (手機觸控也可)
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
-            print("玩家按下左鍵~");
+         //   print("玩家按下左鍵~");
             Chickenaud.PlayOneShot(soundJump, 1.5f);
             Chickenr2d.Sleep();
             Chickenr2d.WakeUp();
@@ -86,7 +86,7 @@ public class Chicken : MonoBehaviour
         }
         else if (Dead == false)
         {
-            print("死了");
+         //   print("死了");
             Chickenaud.PlayOneShot(soundHit, 1.5f);
             Dead = true;
             gm.gameover();
@@ -96,7 +96,7 @@ public class Chicken : MonoBehaviour
     //事件：碰撞開始 - 碰撞開始時執行一次 (Collision2D collision) (碰撞類別 名稱) 存放碰到物件的資訊
     private void OnCollisionEnter2D(Collision2D hit)
     {
-        print(hit.gameObject.name);
+    //    print(hit.gameObject.name);
 
         if(hit.gameObject.name == "地板")
         {
@@ -121,7 +121,10 @@ public class Chicken : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D hit)
     {
-        if(hit.name == "加分")
+        //Dead == True 簡寫 Dead
+        //Dead != True 簡寫 !Dead
+
+        if(hit.name == "加分" && !Dead)
         {
             Chickenaud.PlayOneShot(soundAdd, 1.5f);
             gm.addscore();

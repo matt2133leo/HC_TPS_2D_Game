@@ -1,6 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;  // 引用 介面 API 要用介面一定要輸入這個
 
 public class Gamemanager : MonoBehaviour
@@ -21,23 +20,43 @@ public class Gamemanager : MonoBehaviour
     [Header("分數欄位")]
     public Text ChickenpassScore;
 
+    [Header("最佳分數")]
+    public Text textBest;
+
+    private void Start()    //遊戲開始與載入場景會執行一次
+    {
+        //螢幕.設定解析度(寬，高，是否全螢幕)
+        Screen.SetResolution(450, 800, false);
+
+        //靜態成員再載入場景都不會還原
+        gameOver = false;
+
+        //重複調用("方法名稱", 開始時間, 間隔時間) 
+        InvokeRepeating("bornpipe", 0, 2f);
+        textBest.text = PlayerPrefs.GetInt("最佳分數").ToString();
+    }
 
     private void Update()
     {
-        highscore();
+
     }
 
+    #region 分數 與 最高分
 
     /// <summary>
     /// 加分的方法。
     /// </summary>
     public void addscore()
     {
-        print("加分");
+        //   print("加分");
+
         Score++;
         // 分數介面.文字內容 = 分數.轉為自傳
         // ToString() 可以將任何類型轉呈字串。
-        ChickenpassScore.text = Score.ToString(); 
+        ChickenpassScore.text = Score.ToString();
+        //呼叫最佳分數判定
+        highscore();
+        textBest.text = PlayerPrefs.GetInt("最佳分數").ToString();
     }
 
     /// <summary>
@@ -45,9 +64,16 @@ public class Gamemanager : MonoBehaviour
     /// </summary>
     private void highscore()
     {
+        //如果 目前分數>最佳分數
+        //玩家資料.設定整數("最佳分數",目前分數)
+        if (Score > PlayerPrefs.GetInt("最佳分數"))
+        {
+            PlayerPrefs.SetInt("最佳分數", Score);
+        }
 
     }
-
+    #endregion
+    #region 生成水管與遊戲失敗
     /// <summary>
     /// 生成水管的方法。
     /// </summary>
@@ -76,11 +102,22 @@ public class Gamemanager : MonoBehaviour
         gameOver = true;         // 遊戲結束 = 是
         CancelInvoke("bornpipe"); // 停止 InvokeRepeating 、Invoke 的方法
     }
-
-    private void Start()
+    #endregion
+    #region 遊戲重新開始與離開遊戲
+    /// <summary>
+    /// 離開遊戲
+    /// </summary>
+    public void Quit()
     {
-        //重複調用("方法名稱", 開始時間, 間隔時間) 
-        InvokeRepeating("bornpipe", 0, 2f); 
-
+        Application.Quit(); //使用應用程式.離開();
     }
+    /// <summary>
+    /// 重新開始遊戲
+    /// </summary>
+    public void Replay()
+    {
+        //Application.LoadLevel("遊戲場景"); // 應用程式.載入場景("場景名稱");←舊版API
+        SceneManager.LoadScene(0); //需添加using UnityEngine.SceneManagement;  場景管理器.載入場景("場景名稱"); ←新版API
+    }
+    #endregion
 }

@@ -5,7 +5,7 @@ using UnityEngine.UI;  // 引用 介面 API 要用介面一定要輸入這個
 public class Gamemanager : MonoBehaviour
 {
     [Header("目前分數"), Tooltip("當前遊玩的最高分")]
-    public int Score = 0 ;    //目前分數
+    public static int Score = 0 ;    //目前分數
     [Header("最高分數"),Tooltip("曾經的最高分")]
     public int High_Score ;//最高分數
     [Header("水管"), Tooltip("生成水管")]
@@ -30,6 +30,8 @@ public class Gamemanager : MonoBehaviour
 
         //靜態成員再載入場景都不會還原
         gameOver = false;
+
+        Score = 0;
 
         //重複調用("方法名稱", 開始時間, 間隔時間) 
         InvokeRepeating("bornpipe", 0, 2f);

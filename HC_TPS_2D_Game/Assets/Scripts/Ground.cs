@@ -37,7 +37,7 @@ public class Ground : MonoBehaviour
         if (Gamemanager.gameOver) return;
         // 地板.位移(x, y, z);
         // Time.deltaTime 每幀的時間
-        ground.Translate(-speed * Time.deltaTime , 0, 0); 
+        ground.Translate((-speed- (Gamemanager.Score*0.25f )) * Time.deltaTime , 0, 0); 
 
     }
 

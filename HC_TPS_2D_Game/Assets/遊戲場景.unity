@@ -1050,7 +1050,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e866d8d17bece8242b132b6e9aab4e2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Score: 0
   High_Score: 0
   pipe: {fileID: 6559864730366530418, guid: fa79bdd74fb1184469afe1a375e9252a, type: 3}
   goFinal: {fileID: 466136645}
